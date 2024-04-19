@@ -1,0 +1,163 @@
+150 000 sentences
+
+base: 
+    Bleu: 13.57
+    Rouge: 46.69
+    chrf: 39.17
+    Bleurt: -00.19
+    COMET: 73.93
+
+replaced jp punctuation to eng:
+    Bleu: 12.98
+    Rouge: 45.22
+    chrf: 37.97
+    Bleurt: -00.22
+    COMET: 72.75
+
+bart default:
+    Bleu: 00.01
+    Rouge: 00.75
+    chrf: 01.04
+    Bleurt: -01.64
+    COMET: 0.281  
+
+english deletion:
+    Bleu: 14.25
+    Rouge: 47.34
+    chrf: 40.20
+    Bleurt: -00.13
+    COMET: 75.20  
+
+no space:
+    Bleu: 13.57
+    Rouge: 46.63
+    chrf: 39.14
+    Bleurt: -00.19
+    COMET: 73.89  
+
+english deletion no cn jp:
+    Bleu: 14.58
+    Rouge: 47.34
+    chrf: 41.21
+    Bleurt: -00.13
+    COMET: 75.23  
+
+english deletion no cn jp + summarized jp:
+    Bleu: 13.61
+    Rouge: 44.87
+    chrf: 39.02
+    Bleurt: -00.20
+    COMET: 73.01  
+
+english deletion no cn jp + summarized jp + summarized en:
+    Bleu: 14.14
+    Rouge: 44.39
+    chrf: 39.76
+    Bleurt: -00.19
+    COMET: 72.91
+
+english deletion no cn jp + google translate:
+    Bleu: 23.15
+    Rouge: 57.70
+    chrf: 49.45
+    Bleurt: -00.13
+    COMET: 79.10  
+
+english deletion no cn jp + google translate + wakati:
+    Bleu: 22.04
+    Rouge: 56.59
+    chrf: 48.01
+    Bleurt: -00.13
+    COMET: 78.29
+
+english deletion no cn jp + wakati:
+    Bleu: 14.20
+    Rouge: 46.79
+    chrf: 40.29
+    Bleurt: -00.16
+    COMET: 74.60   
+
+english deletion no cn jp + KyTea:
+    Bleu: 4.019
+    Rouge: 24.61
+    chrf: 22.67
+    Bleurt: -00.93
+    COMET: 74.60 
+
+english deletion no cn jp + Spacy:
+    Bleu: 14.21
+    Rouge: 46.79
+    chrf: 40.31
+    Sacrebleu: -00.15
+    COMET: 74.59 
+
+==========================================
+unique sentence
+
+----with english 
+{'en': 'Lesson : Conversational English - 5 lesson pack This is a 5-lesson pack.',
+ 'jp': 'レッスン : Conversational English - 5 lesson pack これは合計5回のパックレッスンです。'}
+base: Lesson: International English - 5 without pack this is a total of five pack lessons.
+    Bleu: 38.34
+    chrf: 50.96
+    Sacrebleu: 13.67
+
+{'jp': 'レッスン : コンバセーショナルイングリッシュ5レッソンパックこれは合計5回のパックレッスンです。', ソ
+ 'en': 'Lesson : Conversational English - 5 lesson pack This is a 5-lesson pack.'}
+katakana manual: Lesson: Conversative English 5 Reson's pack. This is a total of five pack lessons.
+    Bleu: 38.34
+    chrf: 55.92
+    Sacrebleu: 13.68
+
+レッスン : コンバセーショナルイングリッシュ5レッスンパックこれは合計5回のパックレッスンです。  ス
+katakana manuel v2: Lesson: Conversative English 5 lesson pack. This is a total of five pack lessons.
+    Bleu: 49.25
+    chrf: 65.23
+    Sacrebleu: 20.40
+
+
+-----with special characters
+{'en': 'Copy Watches Bell & Ross BR 01-94 Steel Chronograph [ae85] - $215.00 : Professional replica watches stores, bestwatchestop.co',
+ 'jp': 'コピー時計ベル&ロスBRの01から94スチールクロノグラフ [ae85] - ¥26058 : プロフェッショナルレプリカが店舗を見て, bestwatchestop.co',
+ 'prediction': 'Copy Clock Bells 01 to 94 Steel Chronrographs [ae85]'}
+base: Copy Clock Bells 01 to 94 Steel Chronrographs [ae85]
+    Bleu: 11.17
+    chrf: 23.53
+    Sacrebleu: 4.879
+
+Yen changed: Copy Clock Bells 01 to WB 94 Steel Kron Graph [ae85] - 26058 En:
+    Bleu: 21.42
+    chrf: 21.39
+    Sacrebleu: 11.09
+
+separated: Copy Clock Bell and Ros BR 01 to 94 Steel Kronographs. The professional replica looked at the store. bestwatchestop.co
+    Bleu: 0
+    chrf: 52.49
+    Sacrebleu: 10.68       
+
+
+
+=========================
+Tokenizers:
+BartTokenizer(name_or_path='facebook/bart-base', vocab_size=50265, model_max_length=1024, is_fast=False, padding_side='right', truncation_side='right', special_tokens={'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'sep_token': '</s>', 'pad_token': '<pad>', 'cls_token': '<s>', 'mask_token': '<mask>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={
+	0: AddedToken("<s>", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),
+	1: AddedToken("<pad>", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),
+	2: AddedToken("</s>", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),
+	3: AddedToken("<unk>", rstrip=False, lstrip=False, single_word=False, normalized=True, special=True),
+	50264: AddedToken("<mask>", rstrip=False, lstrip=True, single_word=False, normalized=True, special=True),
+}
+
+MarianTokenizer(name_or_path='Helsinki-NLP/opus-mt-ja-en', vocab_size=60716, model_max_length=512, is_fast=False, padding_side='right', truncation_side='right', special_tokens={'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '<pad>'}, clean_up_tokenization_spaces=True),  added_tokens_decoder={
+	0: AddedToken("</s>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	1: AddedToken("<unk>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	60715: AddedToken("<pad>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+}
+
+post 
+206 - dates
+232 - ngrams
+236 - 、
+311 - percent
+pronouns
+385 - €
+386 - dates
