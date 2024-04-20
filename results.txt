@@ -1,6 +1,6 @@
 150 000 sentences
 
-base: 
+baseline: 
     Bleu: 13.57
     Rouge: 46.69
     chrf: 39.17
@@ -14,7 +14,7 @@ replaced jp punctuation to eng:
     Bleurt: -00.22
     COMET: 72.75
 
-bart default:
+mbart50 Tokenizer on baseline:
     Bleu: 00.01
     Rouge: 00.75
     chrf: 01.04
@@ -35,56 +35,56 @@ no space:
     Bleurt: -00.19
     COMET: 73.89  
 
-english deletion no cn jp:
+english deletion + no cn jp:
     Bleu: 14.58
     Rouge: 47.34
     chrf: 41.21
     Bleurt: -00.13
     COMET: 75.23  
 
-english deletion no cn jp + summarized jp:
+english deletion + no cn jp + summarized jp:
     Bleu: 13.61
     Rouge: 44.87
     chrf: 39.02
     Bleurt: -00.20
     COMET: 73.01  
 
-english deletion no cn jp + summarized jp + summarized en:
+english deletion + no cn jp + summarized jp + summarized en:
     Bleu: 14.14
     Rouge: 44.39
     chrf: 39.76
     Bleurt: -00.19
     COMET: 72.91
 
-english deletion no cn jp + google translate:
+english deletion + no cn jp + google translate:
     Bleu: 23.15
     Rouge: 57.70
     chrf: 49.45
     Bleurt: -00.13
     COMET: 79.10  
 
-english deletion no cn jp + google translate + wakati:
+english deletion + no cn jp + google translate + wakati (mecab):
     Bleu: 22.04
     Rouge: 56.59
     chrf: 48.01
     Bleurt: -00.13
     COMET: 78.29
 
-english deletion no cn jp + wakati:
+english deletion + no cn jp + wakati (mecab):
     Bleu: 14.20
     Rouge: 46.79
     chrf: 40.29
     Bleurt: -00.16
     COMET: 74.60   
 
-english deletion no cn jp + KyTea:
+english deletion + no cn jp + KyTea:
     Bleu: 4.019
     Rouge: 24.61
     chrf: 22.67
     Bleurt: -00.93
     COMET: 51.91 
 
-english deletion no cn jp + Spacy:
+english deletion + no cn jp + Spacy:
     Bleu: 14.21
     Rouge: 46.79
     chrf: 40.31
@@ -92,7 +92,7 @@ english deletion no cn jp + Spacy:
     COMET: 74.59 
 
 ==========================================
-unique sentence
+unique sentence tests
 
 ----with english 
 {'en': 'Lesson : Conversational English - 5 lesson pack This is a 5-lesson pack.',
