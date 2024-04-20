@@ -82,7 +82,7 @@ english deletion no cn jp + KyTea:
     Rouge: 24.61
     chrf: 22.67
     Bleurt: -00.93
-    COMET: 74.60 
+    COMET: 51.91 
 
 english deletion no cn jp + Spacy:
     Bleu: 14.21

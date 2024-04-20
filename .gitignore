@@ -1,0 +1,9 @@
+base/*
+en-ja/*
+en-ja.tar.gz
+bert_translation_model
+mlruns/
+traintmp/
+train_dataloader
+val_dataloader
+datasets/
